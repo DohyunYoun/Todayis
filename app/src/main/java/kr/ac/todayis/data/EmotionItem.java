@@ -4,18 +4,14 @@ package kr.ac.todayis.data;
  * Created by Min on 2015-08-13.
  */
 public class EmotionItem {
-    private int idx;
     private String name;
     private int resourceImg;
 
-
-    public int getIdx (){
-      return idx;
-    };
-
-    public void setIdx(int idx){
-        this.idx = idx;
+    public EmotionItem(String name, int resourceImg){
+        setName(name);
+        setResourceImg(resourceImg);
     }
+
 
     public String getName (){
         return name;

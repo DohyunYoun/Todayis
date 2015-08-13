@@ -20,13 +20,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import kr.ac.todayis.data.EmotionAdapter;
 import kr.ac.todayis.data.EmotionItem;
+import kr.ac.todayis.data.EmotionAdapter;
 
 public class EmotionActivity extends AppCompatActivity {
 
@@ -41,9 +43,12 @@ public class EmotionActivity extends AppCompatActivity {
         myData = new ArrayList<EmotionItem>();
 
         myAdapter = new EmotionAdapter(this, R.layout.item, myData);
-        ListView myList = (ListView)findViewById(R.id.listView1);
+        ListView myList = (ListView) findViewById(R.id.listView1);
         myList.setAdapter(myAdapter);
+        myList.setOnItemClickListener(mItemClickListener);
+
     }
+
 
     AdapterView.OnItemClickListener mItemClickListener = new AdapterView.OnItemClickListener() {
 
@@ -61,7 +66,7 @@ public class EmotionActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // TODO Auto-generated method stub
-                         //확인하면 서버로 전송, 액티비티 finish;
+                            //확인하면 서버로 전송, 액티비티 finish;
                             finish();
                         }
                     })
